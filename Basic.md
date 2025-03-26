@@ -1,12 +1,11 @@
- # Make Me Move
+# Make Me Move
 
-## Introduction
+## Step 1 - Choose a Character
  In this game you will make a sprite move around the screen.
 
  If you get stuck, click the lightbulb 💡 at the bottom of the screen
  to see what the code should look like.
 
-## Step 1 - Choose a Character
 1. Click ``||sprites:Sprites||``
 
 2. Drag ``||variables:set mySprite to||`` into the ``||Loops:on start||`` block. 
