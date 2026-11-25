@@ -1,7 +1,11 @@
 # STEM-Nights
 
-Links to STEM Nights
+MakeCode Arcade block tutorials for STEM Nights. Edit a `.md` file and push. The links below update automatically.
 
-Basic - https://arcade.makecode.com/S82520-36677-08399-09382
+| Tutorial | Link |
+|---|---|
+| Make Me Move | https://arcade.makecode.com/#tutorial:github:derickson73/STEM-Nights/Simple |
+| Bouncing Sprite | https://arcade.makecode.com/#tutorial:github:derickson73/STEM-Nights/Easy |
+| Basic | https://arcade.makecode.com/#tutorial:github:derickson73/STEM-Nights/Basic |
 
-Easy - https://arcade.makecode.com/S21276-62645-81478-69238
+No internet? See [RUNBOOK.md](RUNBOOK.md) to run the tutorials from a laptop.
