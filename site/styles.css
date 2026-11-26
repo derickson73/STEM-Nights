@@ -77,13 +77,13 @@ main {
     width: var(--w);
     /* the blob PNGs have lots of see-through padding; pull things in */
     margin: calc(var(--w) * -0.1) 0 calc(var(--w) * -0.2);
-    animation: float 4s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
     transition: transform 0.25s;
 }
 
 /* the two blobs float out of step with each other */
 .game.long img {
-    animation-delay: -2s;
+    animation-delay: -3s;
 }
 
 .game.short img { filter: drop-shadow(0 0 28px rgba(49, 165, 228, 0.55)); }
@@ -91,8 +91,8 @@ main {
 
 .game:hover img,
 .game:focus-visible img {
-    animation: boing 0.6s ease-out;
-    transform: scale(1.08);
+    animation: boing 0.5s ease-out;
+    transform: scale(1.04);
 }
 
 /* button-style caption */
@@ -122,15 +122,14 @@ main {
 /* ---------- Animations ---------- */
 @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
-    50%      { transform: translateY(-12px) rotate(-1.5deg); }
+    50%      { transform: translateY(-5px); }
 }
 
 @keyframes boing {
     0%   { transform: scale(1); }
-    30%  { transform: scale(1.12, 0.94) rotate(2deg); }
-    55%  { transform: scale(0.97, 1.06) rotate(-2deg); }
-    80%  { transform: scale(1.1) rotate(1deg); }
-    100% { transform: scale(1.08); }
+    40%  { transform: scale(1.06, 0.98); }
+    70%  { transform: scale(1.02, 1.03); }
+    100% { transform: scale(1.04); }
 }
 
 /* kids/visitors who've asked their device for less motion get a still page */
