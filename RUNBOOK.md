@@ -6,6 +6,17 @@
 2. Commit and push to GitHub.
 3. Done. The website links pick it up automatically (allow a few minutes for MakeCode's cache).
 
+## Updating the website (duaneerickson.com)
+
+1. Edit files in the `site/` folder.
+2. Commit and push to GitHub.
+3. GitHub uploads `site/` to GoDaddy automatically. Check progress on the repo's **Actions** tab.
+
+Pages:
+
+- `site/index.html` → front page (the classroom tutorials)
+- `site/home/index.html` → hidden "Keep Coding at Home" page, reached only by the QR code in `print/home-qr.png` (points to `duaneerickson.com/home`). To change which tutorial it opens, edit the link on that page. The QR code never needs reprinting.
+
 ## Lab WITH internet
 
 Open these on the kid computers (same links as duaneerickson.com):
