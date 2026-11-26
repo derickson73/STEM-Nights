@@ -25,7 +25,7 @@ Open these on the kid computers (same links as duaneerickson.com):
 |---|---|
 | Make Me Move | https://arcade.makecode.com/#tutorial:github:derickson73/STEM-Nights/Simple |
 | Bouncing Sprite | https://arcade.makecode.com/#tutorial:github:derickson73/STEM-Nights/Easy |
-| Basic | https://arcade.makecode.com/#tutorial:github:derickson73/STEM-Nights/Basic |
+| Collect the Clovers (long, built into MakeCode) | https://arcade.makecode.com/#tutorial:/tutorials/collect-the-clovers |
 
 ## NO internet (laptop server)
 
