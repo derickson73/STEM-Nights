@@ -1,55 +1,150 @@
+/* ---------- Fonts (files live on the server only, in /fonts — not in GitHub) ---------- */
+@font-face {
+    font-family: "Azo Sans";
+    src: url("fonts/Rui%20Abreu%20-%20AzoSans-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Azo Sans";
+    src: url("fonts/Rui%20Abreu%20-%20AzoSans-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* ---------- Brand colors (sampled from the SHORT / LONG blobs) ---------- */
+:root {
+    --teal-1: #45bdc3;
+    --teal-2: #31a5e4;
+    --purple-1: #a03aa0;
+    --purple-2: #3d2a78;
+}
+
 html, body, header, p, main, figure, img, figcaption {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: black;
+    color: white;
+    font-family: "Azo Sans", Arial, sans-serif;
+    min-height: 100vh;
 }
 
+/* ---------- Header ---------- */
 header {
     padding-top: 10px;
     text-align: center;
 }
 
-main {
-    display:flex;
-    justify-content: space-around;
-}
-
-header img{
-    width:800px
+header img {
+    width: 800px;
+    max-width: 90vw; /* shrink to fit phones */
 }
 
 h2 {
-    font-family: "Azo Sans", Arial, sans-serif;
     font-size: 2em;
-    color:white;
+    font-weight: 700;
+    margin: 0.2em 0 0;
 }
 
-figure {
-    text-align: center;
+.tagline {
+    font-size: 1.3em;
+    color: #ccc;
+    margin-top: 0.3em;
 }
 
-figcaption{
-    color:white;
-    font-family: "Azo Sans", Arial, sans-serif;
-    font-size:1.5em;
+/* ---------- Game cards ---------- */
+main {
+    display: flex;
+    flex-wrap: wrap; /* stack on small screens */
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
 }
 
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    --w: min(400px, 80vw);
+}
 
+.game img {
+    width: var(--w);
+    /* the blob PNGs have lots of see-through padding; pull things in */
+    margin: calc(var(--w) * -0.1) 0 calc(var(--w) * -0.2);
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.25s;
+}
+
+/* the two blobs float out of step with each other */
+.game.long img {
+    animation-delay: -2s;
+}
+
+.game.short img { filter: drop-shadow(0 0 28px rgba(49, 165, 228, 0.55)); }
+.game.long img  { filter: drop-shadow(0 0 28px rgba(160, 58, 160, 0.55)); }
+
+.game:hover img,
+.game:focus-visible img {
+    animation: boing 0.6s ease-out;
+    transform: scale(1.08);
+}
+
+/* button-style caption */
+.name {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-size: 1.5em;
+    font-weight: 700;
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.25);
+    transition: transform 0.15s;
+}
+.game.short .name { background: linear-gradient(90deg, var(--teal-1), var(--teal-2)); }
+.game.long .name  { background: linear-gradient(135deg, var(--purple-1), var(--purple-2)); }
+
+.game:hover .name,
+.game:focus-visible .name {
+    transform: translateY(-3px);
+}
+
+.steps {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #bbb;
+}
+
+/* ---------- Animations ---------- */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-12px) rotate(-1.5deg); }
+}
+
+@keyframes boing {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.12, 0.94) rotate(2deg); }
+    55%  { transform: scale(0.97, 1.06) rotate(-2deg); }
+    80%  { transform: scale(1.1) rotate(1deg); }
+    100% { transform: scale(1.08); }
+}
+
+/* kids/visitors who've asked their device for less motion get a still page */
+@media (prefers-reduced-motion: reduce) {
+    .game img { animation: none !important; }
+}
+
+/* ---------- Smaller screens ---------- */
 @media screen and (max-width: 1200px) {
-    main img {
-        width:300px;
-    }
-  }
+    .game { --w: 300px; }
+}
 
-  @media screen and (max-width: 900px) {
-    main img {
-        width:200px;
-    }
-
-    header img{
-        width:600px
-    }
-  }
+@media screen and (max-width: 900px) {
+    .game { --w: min(260px, 80vw); }
+    h2 { font-size: 1.6em; }
+    .name { font-size: 1.25em; }
+}

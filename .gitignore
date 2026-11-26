@@ -1,0 +1,6 @@
+# Licensed fonts live on the server only (uploaded by hand) - never commit them
+site/fonts/
+*.otf
+*.ttf
+*.woff
+*.woff2
